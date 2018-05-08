@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-navbar>
+    <ion-toolbar>
+      <ion-title>
+        Mundial Rusia 2015
+      </ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only (click)="salir($event)">
+          <ion-icon name="log-out"></ion-icon>
+        </button>
+        <button ion-button icon-only (click)="contacto($event)">
+          <ion-icon name="information-circle"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-navbar>
+</ion-header>
+<!--
+<ion-content class="inicio">
+  <h6 text-center>
+    Bienvenido a la aplicacion del mundial femenino de futbol Canada 2015.
+  </h6>
+  <p>La Copa Mundial Femenina de la FIFA de 2015 es la séptima edición del máximo torneo femenino a nivel selecciones del mundo.</p>
+  <p>
+    Aqui podrás encontrar toda la información sobre los equipos y sobre los partidos del mundial femenino de futbol
+  </p>
+  <img src="../../assets/imgs/mundial.jpg" alt="Imagen del mundial femenino" width="150" height="75">
+  <h6>Usuarios registrados en esta sesion</h6>
+  <div *ngFor="let c of $cosa | async">
+    <p class="-">{{c.username}}</p>
+  </div>
+  <button ion-item (click)="itemTapped($event)">
+      clasificacion
+  </button>
+</ion-content>
+-->
+<ion-content padding>
+  <div *ngFor="let c of $cosa | async">
+    <ion-card>
+      <ion-card-content>
+        <ion-item>
+          <ion-label color="primary" floating>Usuario: {{c.username}}</ion-label>
+          <ion-input></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label color="primary" floating>Contraseña: {{c.password}}</ion-label>
+          <ion-input></ion-input>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+    <div padding>
+      <button block ion-button (click)="actualizar(c)">actualizar</button>
+    </div>
+  </div>
+
+
+
+</ion-content>
