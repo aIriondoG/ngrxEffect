@@ -29,6 +29,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { reducer } from '../store/reducer/reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { efectos } from '../store/effect/effects';
+import { InputModalPage } from '../pages/home/modal/input-modal';
 
 //Exportacion de AngularFireBase2 Configuracion
 export const config = {
@@ -45,7 +46,8 @@ export const config = {
     MyApp,
     HomePage,
     RegistroPage,
-    ContactoPage
+    ContactoPage,
+    InputModalPage
   ],
   imports: [
     BrowserModule,
@@ -63,7 +65,8 @@ export const config = {
     MyApp,
     HomePage, 
     RegistroPage,
-    ContactoPage
+    ContactoPage,
+    InputModalPage
 
 
   ],

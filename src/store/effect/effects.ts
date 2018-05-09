@@ -18,11 +18,19 @@ export class efectos {
         map(action => action.payload),
         map(us => new ac.LoginSuccess(us))
     );
+    
     @Effect()
     logout$: Observable<Action> = this.actions$.ofType<ac.Logout>(ac.LOGOUT)
     .pipe(
         map(action => action.payload),
         map(us => new ac.LogoutSuccess(us))
+    );
+
+    @Effect()
+    update$: Observable<Action> = this.actions$.ofType<ac.Update>(ac.UPDATE)
+    .pipe(
+        map(action => action.payload),
+        map(us => new ac.UpdatetSuccess(us))
     );
 
 }

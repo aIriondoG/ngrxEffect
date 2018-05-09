@@ -41,16 +41,15 @@ export class LogoutFailed implements Action {
 
     constructor(public payload: string) { }
 }
-ME HE QUEDADO AQUI
 export class Update implements Action {
     readonly type = UPDATE;
 
-    constructor(public payload: string) { }
+    constructor(public payload: { User: { id: string, changes: user } }) { }
 }
 export class UpdatetSuccess implements Action {
     readonly type = UPDATE_SUCCESS;
 
-    constructor(public payload: { User: { password: string, changes: user } }) { }
+    constructor(public payload: { User: { id: string, changes: user } }) { }
 }
 export class UpdateFailed implements Action {
     readonly type = UPDATE_FAILED;

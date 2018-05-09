@@ -34,10 +34,12 @@ export function reducer(
         case ac.LOGOUT_SUCCESS: {
             return adapter.removeOne(action.payload, state);
         }
+        case ac.UPDATE_SUCCESS: {
+            return adapter.updateOne(action.payload.User , state);
+        }
         /*case ac.LOGOUT_FAILED: {
             return adapter.addMany(action.payload, state);
         }*/
-
         default:
             return state;
     }

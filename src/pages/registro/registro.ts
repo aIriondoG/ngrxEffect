@@ -42,20 +42,16 @@ export class RegistroPage {
     console.log('ionViewDidLoad RegistroPage');
   }
   login() {
-
-
     let User: user = { username: this.username, password: this.password };
     User.id = this.username;
-    /*console.log(User.id);
-    console.log("User:");
-    console.log(User);*/
     this.$cosa = this.store.select(rec.selectAllCosas);
     this.store.dispatch(new ac.Login({ User }));
-    console.log(this.username + "--" + this.password);
-    this.auth.loginUser(this.username, this.password).then((user) => {
+    console.log(this.username);
+    this.auth.loginUser(this.username, this.password)
+      .then((user) => {
 
-    }
-    )
+      }
+      )
       .catch(err => {
         let alert = this.alertCtrl.create({
           title: 'Error',
