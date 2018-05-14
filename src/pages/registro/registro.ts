@@ -23,7 +23,7 @@ import { HomePage } from '../home/home';
   templateUrl: 'registro.html',
 })
 export class RegistroPage {
-  username: '';
+  username: string = '';
   password: '';
   $cosa: Store<user[]>;
   cos: Observable<user>;
@@ -49,9 +49,8 @@ export class RegistroPage {
     console.log(this.username);
     this.auth.loginUser(this.username, this.password)
       .then((user) => {
-
-      }
-      )
+        this.navCtrl.setRoot(HomePage)
+      })
       .catch(err => {
         let alert = this.alertCtrl.create({
           title: 'Error',
@@ -61,9 +60,11 @@ export class RegistroPage {
         });
         this.verdadero = false;
         alert.present();
+        this.store.dispatch(new ac.Logout( this.username ));
+      
       })
 
-    this.navCtrl.setRoot(HomePage);
+    
   }
 
 }
